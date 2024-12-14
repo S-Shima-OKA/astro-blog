@@ -1,0 +1,10 @@
+---
+const {headingLv = 2, text} = Astro.props;
+const currentLv = Math.min(Math.max(headingLv, 2), 6);
+const Tag = `h${currentLv}`;
+---
+<div class=`c-heading -lv${currentLv}`>
+    {
+        <Tag>{text}</Tag>
+    }
+</div>
