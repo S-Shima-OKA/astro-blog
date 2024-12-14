@@ -6,4 +6,4 @@
 ## Changelog
 | Release Date | Changes |
 ----|---- 
-| 2024年12月14日（土） | 最初のコミット |
+|  |  |
