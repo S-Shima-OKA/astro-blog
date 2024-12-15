@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# "progress.md"という名前のファイルを無視
+progress.md
+
+# "20241215_ignore.md"という名前のファイルを無視
+src/pages/posts/20241215_ignore.md
