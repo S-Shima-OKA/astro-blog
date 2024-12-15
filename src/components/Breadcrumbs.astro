@@ -1,9 +1,16 @@
 ---
 const { current } = Astro.props;
 ---
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li>{current}</li>
-    </ul>
+<nav class="bulma-breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li>
+        <a href="/">
+            <span class="icon is-small">
+                <i class="fas fa-home" aria-hidden="true"></i>
+            </span>
+        Home
+        </a>
+    </li>
+    <li class="bulma-is-active bulma-text"><span class="pl-3">{current}</span></li>
+  </ul>
 </nav>
