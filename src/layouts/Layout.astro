@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 const { 
 	pageTitle = '',
 	metaDesc,
+	contentType,
 } = Astro.props;
 ---
 <!doctype html>
@@ -21,7 +22,7 @@ const {
 	</head>
 	<body>
 		<Header />
-		<Container>
+		<Container contentClass={contentType}>
 			<slot />
 		</Container>
 		<Footer />
