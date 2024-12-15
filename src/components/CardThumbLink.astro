@@ -15,10 +15,10 @@ const {
         <Heading headingLv={titleLv} text={titleText} />
         <img src={imgSrc} alt={altText} />
         <p><span>{postDate}</span></p>
-        <ul>
+        <ul class="c-tag-list">
             {
                 postTags.map((tag) => (
-                    <li><a href={tag.link}>{tag.name}</a></li>
+                    <li class="bulma-tag bulma-is-primary bulma-is-light"><a href={tag.link}>{tag.name}</a></li>
                 ))
             }
         </ul>
