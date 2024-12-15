@@ -5,20 +5,37 @@ const navLinks = [
 ]
 ---
 <header>
-    <h1>
-        Tech Study Blog | テクスタ
-    </h1>
+    
     <nav>
         <ul>
-            {
-                navLinks.map((menu) =>{
-                    return (
-                        <li>
-                            <a href={menu.url}>{menu.title}</a>
-                        </li>
-                    )
-                })
-            }
         </ul>
     </nav>
+    <nav class="bulma-navbar" role="navigation" aria-label="main navigation">
+        <div class="bulma-navbar-brand">
+            <h1>
+                <a class="bulma-navbar-item" href="/">Tech Study Blog | テクスタ</a>
+            </h1>
+      
+          <a role="button" class="bulma-navbar-burger" aria-label="menu" aria-expanded="false" data-target="bulma-navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div class="bulma-navbar-menu">
+            <ul class="bulma-navbar-start">
+                {
+                    navLinks.map((menu) =>{
+                        return (
+                            <li>
+                                <a href={menu.url} class="bulma-navbar-item">{menu.title}</a>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </div>
+      </nav>
 </header>
