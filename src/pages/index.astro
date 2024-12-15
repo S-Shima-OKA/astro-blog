@@ -8,8 +8,12 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <Layout metaDesc="モダンフロントエンドについて日々勉強しています。" contentType="index">
-	<p>Home</p>
-		<Heading text="記事一覧" />
+		<div class="bulma-hero bulma-is-medium bulma-is-primary">
+			<div class="bulma-hero-body">
+				<Heading text="記事一覧" />
+				<p class="bulma-subtitle">Primary subtitle</p>
+			</div>
+		</div>
 		<ul>
 			{allPosts.map((post) => 
 				{
