@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Heading from '../components/Heading.astro';
+import CardThumbLink from '../components/CardThumbLink.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,13 +19,14 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 						`;
 					return(
 					<li>
-						<div class="c-card p-type-">
-							<a href={post.url} class="c-card-wrap">
-								<Heading headingLv={3} text={post.frontmatter.title} />
-								<img src={post.frontmatter.image} alt={post.frontmatter.title} />
-								<p><span>{formattedDate}</span></p>
-							</a>
-						</div>
+						<CardThumbLink 
+							link={post.url}
+							titleText={post.frontmatter.title}
+							imgSrc={post.frontmatter.image}
+							altText={post.frontmatter.description}
+							postDate={formattedDate}
+							postTags={post.frontmatter.tags}
+						/>
 					</li>
 				);})}
 		</ul>
