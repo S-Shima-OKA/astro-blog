@@ -1,0 +1,26 @@
+---
+import Heading from '../components/Heading.astro';
+const {
+    link = '#',
+    titleLv = 3,
+    titleText,
+    imgSrc,
+    altText,
+    postDate,
+    postTags = []
+    } = Astro.props;
+---
+<div class="c-card p-type-">
+    <a href={link} class="c-card-wrap">
+        <Heading headingLv={titleLv} text={titleText} />
+        <img src={imgSrc} alt={altText} />
+        <p><span>{postDate}</span></p>
+        <ul>
+            {
+                postTags.map((tag) => (
+                    <li><a href={tag.link}>{tag.name}</a></li>
+                ))
+            }
+        </ul>
+    </a>
+</div>
