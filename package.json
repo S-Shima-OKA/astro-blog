@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.0.5",
+    "bulma": "^1.0.2",
     "destyle.css": "^4.0.1"
   }
 }
