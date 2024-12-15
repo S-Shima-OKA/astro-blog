@@ -1,3 +1,6 @@
-<div class="l-container">
+---
+const {contentClass = ''} = Astro.props;
+---
+<div class=`l-container ${contentClass}`>
     <slot />
 </div>
