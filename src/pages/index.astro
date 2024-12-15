@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Container from '../components/Container.astro';
 import Heading from '../components/Heading.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -9,26 +7,25 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <Layout metaDesc="モダンフロントエンドについて日々勉強しています。">
-	<Header />
-	<Container>
-		<p>Home</p>
+	<p>Home</p>
 		<Heading text="記事一覧" />
 		<ul>
 			{allPosts.map((post) => 
 				{
 					const postDate = new Date(post.frontmatter.pubDate);
-					const formattedDate = `${postDate.getFullYear()}年${(postDate.getMonth() + 1).toString().padStart(2, '0')}月${postDate.getDate().toString().padStart(2, '0')}日`;
+					const formattedDate = `
+							${postDate.getFullYear()}年${(postDate.getMonth() + 1).toString().padStart(2, '0')}月${postDate.getDate().toString().padStart(2, '0')}日
+						`;
 					return(
-					<li key={post.url}>
-						<div className="c-card p-type-">
-							<a href={post.url} className="c-card-wrap">
+					<li>
+						<div class="c-card p-type-">
+							<a href={post.url} class="c-card-wrap">
 								<Heading headingLv={3} text={post.frontmatter.title} />
-								<img src={post.frontmatter.image} alt={post.frontmatter.title}>
+								<img src={post.frontmatter.image} alt={post.frontmatter.title} />
 								<p><span>{formattedDate}</span></p>
 							</a>
 						</div>
 					</li>
 				);})}
 		</ul>
-	</Container>
 </Layout>
