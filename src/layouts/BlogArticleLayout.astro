@@ -6,11 +6,12 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 <Layout 
 	pageTitle={frontmatter.title}
 	metaDesc={frontmatter.description}
-	contentType={'blog'}
+	contentType={'blog bulma-box'}
+	isArticle={true}
 >
 	<Breadcrumbs current={frontmatter.title} />
-	<article class="p-blog-post">
-		<h2>{frontmatter.title}</h2>
+	<article class="bulma-content">
+		<h2 class="bulma-title bulma-is-2">{frontmatter.title}</h2>
 		<slot />
 	</article>
 </Layout>
